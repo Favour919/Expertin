@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+<body>
+    <div class="login-main-wrapper">
+        <h3>Create Account</h3>
+        <p>Sign up with your email and get started with your free account.</p>
+        <form action="" spellcheck="false" id="form">
+            <div class="login-detail">
+                <div>
+                    <input class="login-detail-input login-detail-inputs1" type="text" name="" id="fulname" placeholder="Full Name" autofocus>
+                    <p class="error-message">Please fill this section</p>
+                </div>
+                <!-- <div>
+                    <input class="login-detail-input login-detail-inputs1" type="text" name="" id="lsname" placeholder="Lastname">
+                    <p class="error-message">Please fill this section</p>
+                </div> -->
+                <!-- <div>
+                    <input class="login-detail-input login-detail-inputs1" type="text" name="" id="usname" placeholder="Username">
+                    <p class="error-message">Please fill this section</p>
+                </div> -->
+                <div>
+                    <input class="login-detail-input login-detail-inputs1" type="email" name=""  placeholder="Email" id="email">
+                </div>
+                <div class="pw-wrapper">
+                    <div class="pw">
+                        <input class="login-detail-input login-detail-inputs1" type="password" name="" id="pw" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        <div class="icons">
+                            <i class="fa fa-eye-slash slash"></i>
+                        </div>
+                    </div>
+                    <div class="pw-text">
+                        <p id="uppercase" class="invalid">uppercase</p>
+                        <p id="lowercase" class="invalid">lowercase</p>
+                        <p id="number" class="invalid">number</p>
+                        <p id="characters" class="invalid">16 characters</p>
+                    </div>
+                </div>
+                <div>
+                   <input class="login-detail-input login-detail-inputs1" type="password" name="" id="confirm-pw" placeholder="Confirm Password"> 
+                </div>
+                
+                <input class="login-detail-input" type="text" name="" id="ref-detail" placeholder="Refferal(Optional)">
+            </div>
+            
+            <div class="register-checkbox">
+                <input type="checkbox" name="" id="checkbox">
+                <label for="checkbox">I accept the terms & conditions.</label>
+            </div>
+            <div class="btn-wrapper">
+                <!-- <button class="btn-register"><a href="login.html">Login</a></button> -->
+                <button type="submit" class="btn-login" disabled>Register</button>
+            </div>
+            <p class="">Already have an account? <a href="login.html">Sign in instead</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

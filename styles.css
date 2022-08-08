@@ -1,0 +1,911 @@
+
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  position: relative;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+
+/*
+=============== 
+Navbar
+===============
+*/
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-white);
+  box-shadow: var(--light-shadow);
+  z-index: 100;
+}
+.fixed-nav .links a {
+  color: var(--clr-primary-5);
+}
+.fixed-nav .links a:hover {
+  color: var(--clr-white);
+}
+nav {
+  background: rgba(0, 0, 0, 0.238);
+  /* box-shadow: var(--light-shadow); */
+  /* z-index: 1; */
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.nav-toggle:hover {
+  /* color: var(--clr-white); */
+  transform: rotate(90deg);
+}
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+   color: var(--clr-primary-5);
+}
+.links a {
+  /* color: var(--clr-white); */
+  color: var(--clr-primary-5);
+  font-size: 20px;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+.links a:hover {
+  background: var(--clr-primary-8);
+  color: var(--clr-white);
+}
+.social-icons {
+  display: none;
+  /* 0161967285
+  union bank
+  uyime paul
+  08083842472 */
+}
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: auto;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-center {
+    margin: 0 auto;
+    height: 70px;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-header {
+    padding: 0;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  .links {
+    height: auto;
+    display: flex;
+  }
+
+  .social-icons {
+    display: flex;
+  }
+  .social-icons a {
+    font-size: 20px;
+    margin: 0 1rem;
+    color: var(--clr-primary-5);
+    transition: var(--transition);
+  }
+  .social-icons a:hover {
+    color: var(--clr-primary-7);
+  }
+}
+/* main */
+.main{
+  /* background-image: url(image/crypto2.webp); */
+  background-repeat: no-repeat;
+  background-color: rgb(26, 22, 22);
+  background-size: cover;
+  /* height: calc(100vh - 70px); */
+  height: 100vh;
+  background-blend-mode: overlay;
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  color: #fff;
+  width: 100%;
+  animation: img 70s infinite;
+}
+.main-text{
+  max-width: 1200px;
+  font-size: 40px;
+}
+.main-btn{
+  border: 1px solid var(--clr-primary-5);
+  margin-top: 40px;
+  width: 250px;
+  height: 50px;
+  background-color: var(--clr-primary-5);
+  border-radius: 5px;
+  color: #fff;
+  font-size: 25px;
+}
+@media screen and (max-width: 950px){
+      .main-text{
+        width: auto;
+        font-size: large;
+    }
+    .main{
+      padding:0 10px;
+    }
+}
+
+@keyframes img {
+    0%, 100% {
+        background-image: url(image/crypto2.webp);
+    }
+    /* 10% {
+        background-image: url(image/cypto1.jpg);
+    } */
+    20% {
+        background-image: url(image/cryptocurrencies_2.jpg);
+    }
+    /* 30% {
+        background-image: url(image/cypto2.jpg);
+    } */
+    40% {
+        background-image: url(image/cypto3.jpg);
+    }
+    /* 50% {
+        background-image: url(image/cypto2.jpg);
+    } */
+    60% {
+        background-image: url(image/cypto1.jpg);
+    }
+    /* 70% {
+        background-image: url(image/cryptocurrencies_2.jpg);
+    } */
+    80% {
+        background-image: url(image/cypto2.jpg);
+    }
+    /* 90% {
+        background-image: url(image/cypto3.jpg);
+    } */
+}
+
+/* faq */
+.title {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background: var(--clr-primary-5);
+    width: 100vw;
+    padding: 20px 0;
+  }
+  
+  .question-btn {
+    cursor: pointer;
+    margin-left: 20px;
+    color: var(--clr-primary-1);
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  
+  .questions-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+  
+  .questions {
+    overflow-x: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .question {
+    width: 70%;
+    padding: 20px 0;
+    margin: 0;
+    border-bottom: 1px solid rgb(226, 226, 226);
+  }
+  
+  .question-title {
+    cursor: pointer;
+     color: var(--clr-primary-1);
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .minus {
+    display: none;
+  }
+  
+  .question-ans {
+    display: flex;
+    height: 0;
+    overflow: hidden;
+    margin-top: -10px;
+  }
+  
+  .show-ans {
+    height: auto;
+    animation: slide .2s;
+  }
+  
+  .hide-ans {
+    transition: .2s;
+    animation: slide-up .2s;
+  }
+  
+  @keyframes slide {
+    from {
+      height: 0;
+    }
+    to {
+      height: 160px;
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+      height: 160px;
+    }
+    to {
+      height: 0px;
+    }
+  }
+  
+  .answer-txt {
+    font-size: 15px;
+    margin-top: 0px;
+    padding-top: 10px;
+    line-height: 30px;
+  }
+
+  /* Active section */
+  .active-wrapper{
+    padding: 30px 60px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .active{
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--dark-shadow);
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .ative-title{
+    font-size: 30px;
+    font-weight: 700;
+  }
+  @media (max-width:950px){
+    .active-wrapper{
+      padding: 30px 30px;
+    }
+  }
+  
+  /* research */
+  /* clamp*() */
+  /* @media screen and (max-width: 1000px){
+    .active-wrapper{
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+     }
+} */
+  /*========== Contact ==========*/
+  .contact-nav{
+    background-image: url(image/Consultancy-Services.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(36, 33, 33);
+    height: 20vh;
+    text-align: center;
+    color: #fff;
+    padding: 90px 0;
+    /* height: calc(100vh - 70px); */
+    /* position: relative; */
+  }
+  .contact-sub-menu{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+  }
+  .contact-sub-menu-text{
+      color: #fff;
+  }
+  .contact-main-wrapper{
+    display: grid;
+    gap: 10px;
+    padding: 30px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .contact-text1{
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .contact-main{
+    /* width: 200px; */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 1px 1px 10px rgb(202, 199, 199);
+  }
+@media (max-width:750px) {
+  .contact-main-wrapper{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ======== Trusted section ======= */
+.trusted-wrapper{
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 30px;
+  padding: 40px 60px;
+}
+.trusted-image-wrapper{
+  width: 600px;
+  height: 400px;
+  box-shadow: 10px -10px 0px  2px var(--clr-primary-5);
+  border-radius:  10px;
+}
+.trusted-image{
+  border-radius:10px;
+  width: 100%;
+  height: 100%;
+}
+.trusted-text{
+  width: 60%;
+  padding: 0 20px;
+  font-size: 20px;
+}
+.trusted-reward{
+  display: flex;
+  gap: 20px;
+  
+  align-items: center;
+  padding-top: 20px;
+}
+.trusted-reward-icon{
+  text-align: center;
+  border-radius: 5px;
+    padding: 20px ;
+    color: #fff;
+    background-color: var(--clr-primary-5);
+}
+@media (max-width:950px) {
+    .trusted-wrapper{
+      flex-direction: column;
+      padding: 40px 30px;
+  }
+  .trusted-image-wrapper{
+     width: 100%;
+     /* height: 300px; */
+  
+  }
+  .trusted-text{
+       width: 100%;
+  }
+}
+/* ====== Investment Plan =======*/
+
+.investment-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 60px;
+  /* font-size: 20px; */
+}
+.investment-span{
+  font-size: 20px;
+  color: #fff;
+}
+.investment-hr{
+  border-bottom: 1px dotted rgb(255, 255, 255);
+}
+.investment-header{
+  font-size: 3em;
+  text-align: center;
+}
+.investment-header p {
+  font-size: 1.5rem;
+}
+.investment-details h3 {
+  font-size: 3em;
+}
+.investment-details p {
+  font-size: 1.3rem;
+}
+.investment-details-wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.investment-details{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #fff;
+  margin-top: 20px;
+  padding: 40px 40px;
+  border-radius: 5px;
+  background-color: var(--clr-primary-2);
+}
+
+.investment-details:hover{
+    transform: scale(1.03);
+    transition: .3s;
+}
+.text{
+  color: var(--clr-primary-5);
+}
+.investment-btn{
+  height: 45px;
+  width: 200px;
+  margin-top: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #fff;
+  background-color: var(--clr-primary-5);
+  /* border: 1px solid var(--clr-primary-1); */
+}
+.investment-btn:hover{
+  background-color: unset;
+  transition: .3s;
+}
+@media (max-width:550px){
+    .investment-header{
+        font-size: 2em;
+        text-align: center;
+    }
+    .investment-wrapper{
+      padding: 30px 20px;
+      /* font-size: 20px; */
+  }
+}
+/* ===== Why choose us section ===== */
+.choose-wrapper{
+  padding: 40px 60px;
+  display: grid;
+}
+.choose-wrapper h2{
+  text-align: center;
+  font-size: 4em;
+  margin: 30px 0;
+}
+.choose-detail-wrapper{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.choose-details{
+  background: var(--clr-primary-2);
+  color: #fff;
+  padding: 30px;
+  height: auto;
+  border-radius: 5px;
+}
+.choose-details i{
+  font-size: 7em;
+  margin-bottom: 20px;
+}
+.choose-details h3{
+  font-size: 2em;
+  margin: 20px 0;
+}
+.choose-details p{
+  font-size: 1.5em;
+}
+@media (max-width:550px){
+    
+    .choose-wrapper{
+      padding: 30px 20px;
+      /* font-size: 20px; */
+  }
+  .choose-wrapper h2{
+        font-size: 2em;
+        text-align: center;
+    }
+}
+/* ===== freedom steps ===== */
+
+.freedom-wrapper{
+  padding: 40px 60px;
+  display: grid;
+}
+.freedom-header{
+  padding: 30px 0;
+  text-align: center;
+  font-size: 3em;
+}
+.freedom-detail-wrapper{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.freedom-detail{
+  background: var(--clr-primary-2);
+  color: #fff;
+  font-size: 2em;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.freedom-detail h3{
+  margin: 30px 0;
+}
+.freedom-detail-icon{
+  width: 100px;
+  height: 100px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  font-size: 3em;
+  padding: 70px;
+  align-items: center;
+  justify-content: center;
+}
+.freedom-detail:hover .freedom-detail-icon{
+  background-color: var(--clr-primary-5);
+  border: 1px solid var(--clr-primary-5);
+  transition: .5s;
+}
+.freedom-detail-num{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 30px;
+  background-color: var(--clr-primary-5);
+  position: absolute;
+  top: 3px;
+  right: 110px;
+  
+}
+@media (max-width:550px){
+    
+   .freedom-wrapper{
+      padding: 30px 20px;
+      /* font-size: 20px; */
+  }
+   .freedom-header{
+        font-size: 2em;
+        text-align: center;
+    }
+}
+/* ===== Secured Investments ===== */
+.Secured-Investment-wrapper{
+  padding: 40px 60px;
+  /* display: flex; */
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.Secured-Investment-wrapper img{
+  width: 100%;
+  height: 450px;
+}
+.Secured-Investment-text{
+  font-size: 2em;
+  padding: 20px 0;
+}
+.Secured-Investment-detail{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+}
+.Secured-Investment-detail p{
+  background-color: var(--clr-primary-5);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Secured-Investment-detail a{
+  color: var(--clr-grey-1);
+    font-size: 0.7em;
+}
+.Secured-Investment-text button{
+  background-color: var(--clr-primary-5);
+  height: 70px;
+  width: 250px;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+  border-radius: 5px;
+}
+@media (max-width:550px){
+    
+   .Secured-Investment-wrapper{
+      padding: 30px 20px;
+      /* font-size: 20px; */
+  }
+}
+/* ===== lastest news ===== */
+.lastest-news-wrapper{
+  padding: 40px 60px;
+}
+.lastest-news-header{
+  text-align: center;
+  padding: 30px 0;
+  font-size: 3em;
+}
+.lastest-news-detail-wrapper{
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.Latest-news-icon-wrapper{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+}
+.Latest-news-icon{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Latest-news-icon i{
+  color: var(--clr-primary-2);
+}
+.lastest-news-detail img{
+  width: 100%;
+}
+.lastest-news-detail:hover img{
+  /* transform: scale(0.95); */
+    transition: .5s;
+}
+.lastest-news-detail{
+  background-color: var(--clr-primary-5);
+  height: auto;
+}
+.lastest-news-text{
+  padding: 30px 50px;
+  color: #fff;
+}
+.lastest-news-text h3{
+  color: var(--clr-primary-2);
+}
+.lastest-news-p{
+  font-size: 2em;
+}
+/* ===== lastest news ===== */
+.Payments-wrapper{
+  padding: 40px 60px;
+}
+.Payments-header{
+  text-align: center;
+  font-size: 3em;
+}
+.Payments-images{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.Payments-images div{
+  border: 1px solid var(--clr-primary-5);
+  border-radius: 5px;
+  padding: 20px;
+  margin: 30px 0;
+}
+/* =====  scroll section ===== */
+.top-link {
+  font-size: 1.25rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: var(--clr-primary-5);
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  color: var(--clr-white);
+  animation: bounce 2s ease-in-out infinite;
+  visibility: hidden;
+  z-index: -100;
+}
+.show-link {
+  visibility: visible;
+  z-index: 100;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* =====  Review section ===== */
+  .review-nav{
+    background-image: url(image/Consultancy-Services.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(36, 33, 33);
+    height: 20vh;
+    text-align: center;
+    color: #fff;
+    padding: 90px 0;
+  }
+  .review-sub-menu{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+  }
+  .review-sub-menu-text{
+      color: #fff;
+  }
+  .review-wrapper{
+    padding: 40px 60px;
+  }
+  .review-header{
+    text-align: center;
+    font-size: 2em;
+  }
+  .review-detail-wrapper{
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+  .review-detail{
+    background: var(--clr-primary-2);
+    color: #fff;
+    padding: 30px;
+    margin: 20px 0;
+    height: fit-content;
+    border-radius: 5px;
+  }
+  .review-detail-icon{
+    color: goldenrod;
+    font-size: 1.7em;
+    margin: 10px 0;
+  }
+  .review-detail-decr{
+    margin: 25px 0;
+  }
+  .review-detail p{
+    /* margin: 10px 0; */
+    font-size: 1.7em;
+  }
+  .review-detail h3{
+    font-size: 1.7em;
+  }
+  .review-detail:hover{
+    transform: scale(1.03);
+    transition: .3s;
+  }
