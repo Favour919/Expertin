@@ -9,12 +9,15 @@ a {
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-main-wrapper{
     display: grid;
     gap: 20px;
-    margin: 20px auto;
+    margin: 20px 0;
     padding: 40px;
     width: fit-content;
     box-shadow: 1px 1px 10px rgb(202, 199, 199);

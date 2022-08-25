@@ -185,23 +185,8 @@ let inputField = document.querySelectorAll(".login-detail-inputs1");
 // Submit section
 registerBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    // if (fulname.value == "") {
-    //     e.preventDefault()
-    // } else {
-    //     form.submit()
-    // }
-    // let inputErrors = [];
 
     inputField.forEach(function (field) {
-        // if (!field.value) {
-        //     inputErrors.push("error");
-        //     console.log(inputErrors);
-        // } else if (field.value && !email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-        //     inputErrors.push("error");
-        // } else {
-        //     form.submit();
-        // }
-
         if (field.value && fulname.value.match(/^[A-Za-z]+$/) && email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) && pwValid == true && pw.value === confirmPw.value) {
             form.submit();
             window.location.replace("login.html")
